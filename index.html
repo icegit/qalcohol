@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<!-- Required meta tags -->
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+
+		<!-- Bootstrap CSS -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous" />
+
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+
+		<style>
+			#leftside {
+			text-align:center;
+			}
+			#showTime {
+			font-family: "Trebuchet MS";
+			padding: 25px 0;
+			}
+			#prbar {
+			/*width: 35%;
+			margin: 0 auto;*/
+			}
+
+			#cost {
+			padding: 35px 0 0 0;
+			}	
+
+			.mydata {
+			font-family: "Trebuchet MS";
+			padding: 10px;	
+			text-align:center;
+			}
+
+			.achieved {
+			/*
+			   color: darkgreen !important;
+			   display: inline-block;
+			   font-weight: 300;
+			   visibility:hidden;
+			   display:none;
+			*/
+			   display: inline-block;
+				
+			}
+
+			.netachieved {
+			color: darkgreen !important;
+			font-weight: 600;
+			}	
+
+
+			.biggerspan {
+			font-size: 110%;
+			}			
+
+			.notachieved {
+			/*
+			color: #EEEEEE !important;
+			visibility: hidden;			
+			font-weight: 300;
+			visibility:hidden;
+			display:none;
+			*/
+				
+			display: inline-block;
+
+			}	
+
+			.inblk {
+			display: inline-block;
+			}
+
+
+			.ahmfaicon{
+			margin: 0 0.5em 0 0em;
+			}	
+
+			.column {
+			margin-top : 2em;
+			}
+
+			.showit {
+			display: inline-block !important;
+			}
+
+			.btn {
+			margin: 1em 0;
+			}
+
+
+		</style>
+	</head>
+	<body>
+
+		<div class="container" id="carrier">
+			<div class="row align-items-top">
+				<div id="leftside" class="column col">
+					<img class="img-fluid" src="fatty-liver.png" />
+					<h3 id="showTime"></h3>
+					<div class="progress" id="prbar"></div>	
+				</div>
+			</div>
+			<div class="row align-items-top">
+				<div class="column col">
+					<div class="list-group" id="achs">
+						<!--<a class="list-group-item" href="#"><i class="fa fa-check fa-fw" aria-hidden="true"></i><div id="cost" class="mydata"></div></a>-->
+						<a class="list-group-item netachieved list-group-item-success" href="#"><i class="fa fa-money fa-fw ahmfaicon" aria-hidden="true"></i><div id="percentdata"></div></a>
+						<a class="list-group-item netachieved list-group-item-success" href="#"><i class="fa fa-hourglass-end fa-fw ahmfaicon" aria-hidden="true"></i><div id="time" ></div></a>						
+
+						<a class="list-group-item timer " href="#" data-value="12" data-definer="h"><i class="fa fa-check fa-fw ahmfaicon" aria-hidden="true"></i>[12 hours] During this time, you may start to feel withdrawal symptoms. Your blood sugar should begin to return to normal. Avoid processed sugar and increase fluids to help flush your system and stay hydrated.</a>
+						<a class="list-group-item timer " href="#" data-value="48" data-definer="h"><i class="fa fa-check fa-fw ahmfaicon" aria-hidden="true"></i>[48 hours] Once you have reached 48 hours of sobriety, the hardest part of detox is typically over. Your blood pressure and body temperature should have returned to normal. However, some individuals can still experience withdrawal symptoms such as ‘delirium tremors.’ Delirium tremors cause confusion. You can also experience shaking, hallucinations, abnormal heart rate, increased body temperature, or seizures.</a>
+						<a class="list-group-item timer " href="#" data-value="72" data-definer="h"><i class="fa fa-check fa-fw ahmfaicon" aria-hidden="true"></i>[72 hours] Physically you may be feeling better. However, you can still experience dizziness and become shaky, especially if you are a heavy drinker.</a>
+
+						<a class="list-group-item timer " href="#" data-value="1" data-definer="w"><i class="fa fa-check fa-fw ahmfaicon" aria-hidden="true"></i>[1 week] After one week, your sleeping patterns should have improved, and you may feel more rested. Your body should become more hydrated by now causing your skin to look clearer. It is not uncommon for excessive drinkers with skin conditions such as eczema, dandruff, and rosacea, to see improvements at this time.</a>
+
+						<a class="list-group-item timer " href="#" data-value="1" data-definer="m"><i class="fa fa-check fa-fw ahmfaicon" aria-hidden="true"></i>[1 month] Your liver should start to function better. At this time your liver fat should be reduced at least by 15%, and it can adequately filter harmful toxins from your body. You may notice your energy level has increased. Relapse can occur within the first six months of recovery. It is recommended to seek emotional support from an addiction therapist or other medical professionals and a 12-step rehabilitation facility.</a>
+
+						<a class="list-group-item timer " href="#" data-value="1" data-definer="y"><i class="fa fa-check fa-fw ahmfaicon" aria-hidden="true"></i>[1 year] At this time, you should have noticed many changes in not only your appearance but how you feel overall. On the average, an individual loses 6.5 kg after quitting drinking. The most important thing is in this milestone, your risk of developing liver, mouth, breast and other cancers have reduced as well. Your liver should also be fully functional by now.</a>
+					</div>
+
+					<button type="button" class="btn btn-primary active" id="collapse">Collapse</button>
+				</div>
+
+			</div>
+		</div>
+
+
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.19.2/moment.min.js"></script>
+		<script src="https://rawgit.com/codebox/moment-precise-range/master/moment-precise-range.js"></script>		
+
+		<script>
+
+
+			function pad(n, width, z) {
+			z = z || '0';
+			n = n + '';
+			return n.length >= width ? n : new Array(width - n.length + 1).join(z) + n;
+			}
+
+
+
+			var MomentQuitTime = moment("2019-02-25 23:59:01",       "YYYY-MM-DD HH:mm:ss");
+
+
+			var SmokingCostPerDay = 6;
+			var MinutesSpentOnSmokingPerDay = 90;
+
+			var LungCleaningTime = moment.duration(3, 'months');
+
+			showDiff();
+
+
+
+
+			function showDiff(){
+
+
+
+			var MomentRightNow = moment();			
+			var QuitDuration = moment.duration(MomentRightNow.diff(MomentQuitTime));
+
+			//QuitDuration.add(5, "y");
+			//var d2 = d1.clone();
+
+			var TextElapsedTime = moment.preciseDiff(MomentQuitTime, MomentRightNow);
+
+			var LungCleaningProgress = (QuitDuration / LungCleaningTime * 100 ).toFixed(5);
+			var SavedCost = (SmokingCostPerDay * QuitDuration.asDays());
+			var SavedTime = moment.duration((MinutesSpentOnSmokingPerDay * QuitDuration.asDays()), 'minutes').humanize();
+
+			$(document).ready(function(){
+
+			//Show elapsed time
+			$("#showTime").text(TextElapsedTime);
+
+			//Show lung progress bar
+			$("#prbar").html("<div class='progress-bar progress-bar-success progress-bar-striped active' role='progressbar' aria-valuenow='" + LungCleaningProgress + "' aria-valuemin='0' aria-valuemax='100' style='width:"+ LungCleaningProgress +"%'> <span class='sr-only'>"+ LungCleaningProgress +"% Complete</span></div>");
+
+			// Show percent data
+			$("#percentdata").text(LungCleaningProgress + "% Complete");
+
+			// Show saved amount
+			$("#percentdata").html("<span class='biggerspan'> € " + SavedCost.toLocaleString(undefined, {maximumFractionDigits:2}) + " saved.</span>");
+
+			// Show saved amount
+			$("#time").html("<span class='biggerspan'> " + SavedTime + " saved.</span>");		
+
+			// Show all items
+			$("#collapse").click(function() {
+			$(".collapse").toggle();
+			});
+
+
+			$( "#achs a.timer" ).each(function() {
+
+			var MomentDummyComperatorClone = QuitDuration.clone();			
+			var GetCurrentItemAchievementTime = MomentDummyComperatorClone.subtract($(this).data("value"),$(this).data("definer"));
+
+			if ( GetCurrentItemAchievementTime > 0 ){
+
+
+
+		$(this).addClass("achieved").addClass("list-group-item-success").removeClass("notachieved").removeClass("disabled").addClass("collapse");
+		$(this).find("i.fa").addClass("fa-check").removeClass("fa-clock-o");
+		//console.log($(this).text() + " - (Yes) - " + GetCurrentItemAchievementTime.toISOString());
+
+		} else
+		{
+		//console.log($(this).text() + " - (No) - " + GetCurrentItemAchievementTime.toISOString());
+		$(this).addClass("notachieved").addClass("disabled").removeClass("achieved").removeClass("list-group-item-success").addClass("collapse");
+		$(this).find("i.fa").removeClass("fa-check").addClass("fa-clock-o");
+		};
+
+
+		});
+
+		});
+
+
+
+		setTimeout(showDiff,1000);
+
+		$( "#achs a.achieved").slice(-2).addClass("showit").removeClass("collapse");
+
+		$( "#achs a.notachieved").slice(0, 3).addClass("showit").removeClass("collapse");
+
+		//$( "a.achieved:nth-last-of-type(1)").show();					
+
+		}
+
+
+
+
+
+	</script>
+
+
+
+</body>
+</html>
